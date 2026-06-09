@@ -1,9 +1,6 @@
 import os
 from dotenv import load_dotenv
-
 load_dotenv()
-
-# --- DO NOT MODIFY THE BELOW SECTION ---
 
 # =================================================================
 # 1. CORE SYSTEM CONFIGURATION (Do Not Modify)
@@ -17,7 +14,6 @@ SUPABASE_RESUME_STORAGE_BUCKET="resumes"
 SUPABASE_BASE_RESUME_TABLE_NAME = "base_resume"
 BASE_RESUME_PATH = "resume.json"
 
-# API keys — set only the key(s) needed for your chosen provider.
 LLM_API_KEY = os.environ.get("LLM_API_KEY") or os.environ.get("GEMINI_API_KEY") or os.environ.get("GEMINI_FIRST_API_KEY")
 
 # =================================================================
@@ -25,24 +21,34 @@ LLM_API_KEY = os.environ.get("LLM_API_KEY") or os.environ.get("GEMINI_API_KEY") 
 # =================================================================
 
 # --- LLM Settings ---
-# Use any model supported by LiteLLM (gemini, openai/gpt-4o-mini, groq/llama-3.3-70b-versatile)
-# Full list of supported models & naming: https://docs.litellm.ai/docs/providers
-LLM_MODEL = "gemini"
+LLM_MODEL = "groq/llama-3.3-70b-versatile"
 
 # --- Search Configuration ---
-LINKEDIN_SEARCH_QUERIES = ["maths lecturer", "statistics lecturer", "maths teacher", "Maths assistant professor", "Maths professor"]
-LINKEDIN_LOCATION = "Singapore"
-LINKEDIN_GEO_ID = 102454443      # Singapore: 102454443, Dubai: 100205264
-LINKEDIN_JOB_TYPE = "F" # F=Full-time, C=Contract, P=Part-time, T=Temporary, I=Internship
-LINKEDIN_JOB_POSTING_DATE = "r86400" # r86400=Past 24h, r604800=Past week
-LINKEDIN_F_WT = 1 # 1=Onsite, 2=Remote, 3=Hybrid
+LINKEDIN_SEARCH_QUERIES = [
+    "Senior Business Development Manager B2B",
+    "Senior Sales Manager B2B consulting",
+    "Business Development Manager enterprise sales",
+    "Sales Manager management consulting",
+    "Assistant Sales Manager B2B",
+    "Senior Business Manager consulting",
+    "Business Development Manager edtech",
+    "Sales Manager AI technology company",
+    "Enterprise Sales Manager B2B",
+    "Business Development Manager investment banking"
+]
 
-CAREERS_FUTURE_SEARCH_QUERIES = ["IT Support", "Full Stack Web Developer", "Application Support", "Cybersecurity Analyst", "fresher developer"]
-CAREERS_FUTURE_SEARCH_CATEGORIES = ["Information Technology"]
+LINKEDIN_LOCATION = "Mumbai, Maharashtra, India"
+LINKEDIN_GEO_ID = 103101832
+LINKEDIN_JOB_TYPE = "F"
+LINKEDIN_JOB_POSTING_DATE = "r86400"
+LINKEDIN_F_WT = 2
+
+CAREERS_FUTURE_SEARCH_QUERIES = []
+CAREERS_FUTURE_SEARCH_CATEGORIES = []
 CAREERS_FUTURE_SEARCH_EMPLOYMENT_TYPES = ["Full Time"]
 
 # --- Processing Limits ---
-SCRAPING_SOURCES = ["linkedin"] # "linkedin", "careers_future"
+SCRAPING_SOURCES = ["linkedin"]
 JOBS_TO_SCORE_PER_RUN = 5
 JOBS_TO_CUSTOMIZE_PER_RUN = 1
 MAX_JOBS_PER_SEARCH = {
@@ -51,19 +57,17 @@ MAX_JOBS_PER_SEARCH = {
 }
 
 # =================================================================
-# 3. ADVANCED SYSTEM SETTINGS (Modify with Caution)
+# 3. ADVANCED SYSTEM SETTINGS (Do Not Modify)
 # =================================================================
 LLM_MAX_RPM = 10
 LLM_MAX_RETRIES = 3
 LLM_RETRY_BASE_DELAY = 10
 LLM_DAILY_REQUEST_BUDGET = 0
 LLM_REQUEST_DELAY_SECONDS = 8
-
-LINKEDIN_MAX_START = 1 
+LINKEDIN_MAX_START = 1
 REQUEST_TIMEOUT = 30
 MAX_RETRIES = 3
 RETRY_DELAY_SECONDS = 15
-
 JOB_EXPIRY_DAYS = 30
 JOB_CHECK_DAYS = 3
 JOB_DELETION_DAYS = 60
