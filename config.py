@@ -13,32 +13,23 @@ SUPABASE_STORAGE_BUCKET="personalized_resumes"
 SUPABASE_RESUME_STORAGE_BUCKET="resumes"
 SUPABASE_BASE_RESUME_TABLE_NAME = "base_resume"
 BASE_RESUME_PATH = "resume.json"
-
 LLM_API_KEY = os.environ.get("LLM_API_KEY") or os.environ.get("GEMINI_API_KEY") or os.environ.get("GEMINI_FIRST_API_KEY")
 
 # =================================================================
 # 2. USER PREFERENCES (Editable)
 # =================================================================
-
-# --- LLM Settings ---
 LLM_MODEL = "groq/llama-3.3-70b-versatile"
 
-# --- Search Configuration ---
 LINKEDIN_SEARCH_QUERIES = [
-    "Senior Business Development Manager B2B",
-    "Senior Sales Manager B2B consulting",
-    "Business Development Manager enterprise sales",
-    "Sales Manager management consulting",
-    "Assistant Sales Manager B2B",
-    "Senior Business Manager consulting",
-    "Business Development Manager edtech",
-    "Sales Manager AI technology company",
-    "Enterprise Sales Manager B2B",
-    "Business Development Manager investment banking"
+    "Business Development Manager",
+    "Senior Sales Manager",
+    "Sales Manager B2B",
+    "Business Development Manager B2B",
+    "Senior Business Development"
 ]
 
-LINKEDIN_LOCATION = "Mumbai, Maharashtra, India"
-LINKEDIN_GEO_ID = 103101832
+LINKEDIN_LOCATION = "India"
+LINKEDIN_GEO_ID = 102713980
 LINKEDIN_JOB_TYPE = "F"
 LINKEDIN_JOB_POSTING_DATE = "r86400"
 LINKEDIN_F_WT = 1
@@ -47,7 +38,6 @@ CAREERS_FUTURE_SEARCH_QUERIES = []
 CAREERS_FUTURE_SEARCH_CATEGORIES = []
 CAREERS_FUTURE_SEARCH_EMPLOYMENT_TYPES = ["Full Time"]
 
-# --- Processing Limits ---
 SCRAPING_SOURCES = ["linkedin"]
 JOBS_TO_SCORE_PER_RUN = 5
 JOBS_TO_CUSTOMIZE_PER_RUN = 1
