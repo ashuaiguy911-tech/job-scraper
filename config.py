@@ -25,7 +25,12 @@ LINKEDIN_SEARCH_QUERIES = [
     "Senior Sales Manager",
     "Sales Manager B2B",
     "Business Development Manager B2B",
-    "Senior Business Development"
+    "Senior Business Development",
+    "VP Sales",
+    "Head of Sales",
+    "Regional Sales Manager",
+    "Enterprise Sales Manager",
+    "B2B Sales Manager"
 ]
 
 LINKEDIN_LOCATION = "India"
@@ -42,7 +47,7 @@ SCRAPING_SOURCES = ["linkedin"]
 JOBS_TO_SCORE_PER_RUN = 10
 JOBS_TO_CUSTOMIZE_PER_RUN = 1
 MAX_JOBS_PER_SEARCH = {
-    "linkedin": 5,
+    "linkedin": 10,
     "careers_future": 10,
 }
 
@@ -54,7 +59,7 @@ LLM_MAX_RETRIES = 3
 LLM_RETRY_BASE_DELAY = 10
 LLM_DAILY_REQUEST_BUDGET = 0
 LLM_REQUEST_DELAY_SECONDS = 15
-LINKEDIN_MAX_START = 3
+LINKEDIN_MAX_START = 5
 REQUEST_TIMEOUT = 30
 MAX_RETRIES = 3
 RETRY_DELAY_SECONDS = 15
